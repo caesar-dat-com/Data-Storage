@@ -1,0 +1,32 @@
+digraph Editorial {
+    node [shape=box, style=filled, color=lightblue];
+
+    Libros [label="Libros\n- ISBN\n- Título\n- Género\n- Fecha de publicación\n- Número de páginas\n- Estado de la publicación\n- Precio de venta"];
+    Revistas [label="Revistas\n- ISSN\n- Título\n- Número de edición\n- Fecha de publicación\n- Periodicidad\n- Número de páginas\n- Precio de venta"];
+    Cartillas [label="Cartillas\n- Código único\n- Título\n- Fecha de publicación\n- Número de páginas\n- Temática\n- Precio de venta"];
+    Autores [label="Autores\n- Número de identificación\n- Nombre completo\n- Dirección\n- Número de teléfono\n- Correo electrónico\n- Biografía"];
+    Funcionarios [label="Funcionarios\n- Código único\n- Número de identificación\n- Nombre completo\n- Dirección\n- Número de teléfono\n- Correo electrónico"];
+    Contratos [label="Contratos\n- Identificador único\n- Fecha de inicio\n- Fecha de fin\n- Términos del acuerdo"];
+}
+digraph Editorial {
+    node [shape=box, style=filled, color=lightblue];
+
+    Libros [label="Libros\n- ISBN\n- Título\n- Género\n- Fecha de publicación\n- Número de páginas\n- Estado de la publicación\n- Precio de venta"];
+    Revistas [label="Revistas\n- ISSN\n- Título\n- Número de edición\n- Fecha de publicación\n- Periodicidad\n- Número de páginas\n- Precio de venta"];
+    Cartillas [label="Cartillas\n- Código único\n- Título\n- Fecha de publicación\n- Número de páginas\n- Temática\n- Precio de venta"];
+    Autores [label="Autores\n- Número de identificación\n- Nombre completo\n- Dirección\n- Número de teléfono\n- Correo electrónico\n- Biografía"];
+    Funcionarios [label="Funcionarios\n- Código único\n- Número de identificación\n- Nombre completo\n- Dirección\n- Número de teléfono\n- Correo electrónico"];
+    Contratos [label="Contratos\n- Identificador único\n- Fecha de inicio\n- Fecha de fin\n- Términos del acuerdo"];
+
+    // Relaciones
+    Autores -> Libros [label="escribe"];
+    Autores -> Revistas [label="escribe"];
+    Autores -> Cartillas [label="escribe"];
+    Funcionarios -> Libros [label="edita"];
+    Funcionarios -> Revistas [label="edita"];
+    Funcionarios -> Cartillas [label="edita"];
+    Autores -> Contratos [label="involucra"];
+    Contratos -> Libros [label="incluye"];
+    Contratos -> Revistas [label="incluye"];
+    Contratos -> Cartillas [label="incluye"];
+}
