@@ -1,6 +1,8 @@
 digraph DocTIC {
     rankdir=LR;
-    node [shape=record, fontsize=10];
+    bgcolor=transparent;
+    node [shape=record, fontsize=10, fontcolor=white, color=white];
+    edge [color=white, fontcolor=white];
 
     Usuario [label="{👤 Usuario|ID_usuario (PK) \lNombre \lApellido \lCorreo_electrónico \lNombre_de_usuario \lContraseña \lCiudad_de_origen \lDepartamento_de_origen \lPregunta_secreta \lRespuesta_secreta}"];
     Contraseña [label="{🔐 Contraseña|ID_contraseña (PK)\lContraseña \lFecha_de_creación \lEstado}"];
@@ -29,4 +31,3 @@ digraph DocTIC {
     Comentario -> Usuario [label="N:1 Hecho por \n👤", fontsize=10];
     Respuesta -> Usuario [label="N:1 Respondido por \n👤", fontsize=10];
 }
-
