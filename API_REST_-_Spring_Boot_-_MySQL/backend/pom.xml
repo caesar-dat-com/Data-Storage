@@ -16,7 +16,7 @@
     <description>Backend de una apiRest en Spring Boot y con mysql</description>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>23</java.version>
     </properties>
 
     <dependencies>
