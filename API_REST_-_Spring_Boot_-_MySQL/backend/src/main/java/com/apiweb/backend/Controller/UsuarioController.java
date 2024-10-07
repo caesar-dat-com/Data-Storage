@@ -1,6 +1,6 @@
 package com.apiweb.backend.Controller;
 
-import com.apiweb.backend.Model.UsuarioModel;
+import com.apiweb.backend.Model.UserModel;
 import com.apiweb.backend.Service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,19 +18,19 @@ public class UsuarioController {
     private IUsuarioService usuarioService;
 
     @GetMapping
-    public List<UsuarioModel> obtenerUsuarios() {
+    public List<UserModel> obtenerUsuarios() {
         return usuarioService.obtenerUsuarios();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioModel> obtenerUsuarioPorId(@PathVariable Long id) {
-        Optional<UsuarioModel> usuario = usuarioService.obtenerUsuarioPorId(id);
+    public ResponseEntity<UserModel> obtenerUsuarioPorId(@PathVariable Long id) {
+        Optional<UserModel> usuario = usuarioService.obtenerUsuarioPorId(id);
         return usuario.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioModel> guardarUsuario(@RequestBody UsuarioModel usuario) {
-        UsuarioModel usuarioGuardado = usuarioService.guardarUsuario(usuario);
+    public ResponseEntity<UserModel> guardarUsuario(@RequestBody UserModel usuario) {
+        UserModel usuarioGuardado = usuarioService.guardarUsuario(usuario);
         return new ResponseEntity<>(usuarioGuardado, HttpStatus.CREATED);
     }
 

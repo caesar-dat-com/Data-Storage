@@ -1,6 +1,6 @@
 package com.apiweb.backend.Service;
 
-import com.apiweb.backend.Model.UsuarioModel;
+import com.apiweb.backend.Model.UserModel;
 import com.apiweb.backend.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,17 +15,17 @@ public class UsuarioServiceImpl implements IUsuarioService {
     private UsuarioRepository usuarioRepository;
 
     @Override
-    public List<UsuarioModel> obtenerUsuarios() {
+    public List<UserModel> obtenerUsuarios() {
         return usuarioRepository.findAll();
     }
 
     @Override
-    public Optional<UsuarioModel> obtenerUsuarioPorId(Long id) {
+    public Optional<UserModel> obtenerUsuarioPorId(Long id) {
         return usuarioRepository.findById(id);
     }
 
     @Override
-    public UsuarioModel guardarUsuario(UsuarioModel usuario) {
+    public UserModel guardarUsuario(UserModel usuario) {
         return usuarioRepository.save(usuario);
     }
 

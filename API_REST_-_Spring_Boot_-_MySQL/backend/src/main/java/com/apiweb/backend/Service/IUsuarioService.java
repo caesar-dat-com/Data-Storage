@@ -1,16 +1,16 @@
 package com.apiweb.backend.Service;
 
-import com.apiweb.backend.Model.UsuarioModel;
-
+import com.apiweb.backend.Model.UserModel;
 import java.util.List;
 import java.util.Optional;
 
 public interface IUsuarioService {
-    List<UsuarioModel> obtenerUsuarios();
 
-    Optional<UsuarioModel> obtenerUsuarioPorId(Long id);
+    List<UserModel> obtenerUsuarios();
 
-    UsuarioModel guardarUsuario(UsuarioModel usuario);
+    Optional<UserModel> obtenerUsuarioPorId(Long id);
+
+    UserModel guardarUsuario(UserModel usuario);
 
     void eliminarUsuario(Long id);
 }
