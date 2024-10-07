@@ -19,7 +19,7 @@ public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera el ID automáticamente
-    private Integer IDUsuario;
+    private Integer ID_usuario;
 
     @Column(nullable = false)
     private String Nombre;
@@ -28,23 +28,23 @@ public class UsuarioModel {
     private String Apellido;
 
     @Column(name = "Correo_electronico", unique = true, nullable = false)
-    private String CorreoElectronico;
+    private String Correo_electronico;
 
     @Column(name = "Nombre_de_usuario", unique = true, nullable = false)
-    private String NombreDeUsuario;
+    private String Nombre_de_usuario;
 
     @Column(nullable = false)
     private String Contraseña;
 
     @Column(name = "Ciudad_de_origen")
-    private String CiudadDeOrigen;
+    private String Ciudad_de_origen;
 
     @Column(name = "Departamento_de_origen")
-    private String DepartamentoDeOrigen;
+    private String Departamento_de_origen;
 
     @Column(name = "Pregunta_secreta")
-    private String PreguntaSecreta;
+    private String Pregunta_secreta;
 
     @Column(name = "Respuesta_secreta")
-    private String RespuestaSecreta;
+    private String Respuesta_secreta;
 }
