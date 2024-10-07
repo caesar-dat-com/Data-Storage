@@ -2,6 +2,8 @@ package com.apiweb.backend.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -16,32 +18,33 @@ import lombok.NoArgsConstructor;
 public class UsuarioModel {
 
     @Id
-    private Integer idUsuario;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera el ID automáticamente
+    private Integer IDUsuario;
 
     @Column(nullable = false)
-    private String nombre;
+    private String Nombre;
 
     @Column(nullable = false)
-    private String apellido;
+    private String Apellido;
 
-    @Column(name = "correo_electronico", unique = true, nullable = false)
-    private String correoElectronico;
+    @Column(name = "Correo_electronico", unique = true, nullable = false)
+    private String CorreoElectronico;
 
-    @Column(name = "nombre_de_usuario", unique = true, nullable = false)
-    private String nombreDeUsuario;
+    @Column(name = "Nombre_de_usuario", unique = true, nullable = false)
+    private String NombreDeUsuario;
 
     @Column(nullable = false)
-    private String contraseña;
+    private String Contraseña;
 
-    @Column(name = "ciudad_de_origen")
-    private String ciudadDeOrigen;
+    @Column(name = "Ciudad_de_origen")
+    private String CiudadDeOrigen;
 
-    @Column(name = "departamento_de_origen")
-    private String departamentoDeOrigen;
+    @Column(name = "Departamento_de_origen")
+    private String DepartamentoDeOrigen;
 
-    @Column(name = "pregunta_secreta")
-    private String preguntaSecreta;
+    @Column(name = "Pregunta_secreta")
+    private String PreguntaSecreta;
 
-    @Column(name = "respuesta_secreta")
-    private String respuestaSecreta;
+    @Column(name = "Respuesta_secreta")
+    private String RespuestaSecreta;
 }
